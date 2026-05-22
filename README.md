@@ -1,2 +1,0 @@
-# KoralbyteStudios
-Koralbyte Studios
