@@ -152,7 +152,7 @@ export function BrandAuditPage({ onNavigate }: BrandAuditPageProps) {
                </p>
                <div className="flex flex-col sm:flex-row items-center gap-4 text-[10px] sm:text-xs font-mono text-white/70 border-t border-white/40 pt-6 justify-center md:justify-start">
                  <span className="bg-bauble-blue/10 text-bauble-blue px-3 py-1 border border-bauble-blue/20">Delivered in 5-7 business days</span>
-                 <span className="bg-white text-black px-4 py-2 font-bold tracking-widest text-sm shadow-[0_0_20px_rgba(255,255,255,0.4)]">USD 170</span>
+                 <span className="bg-white text-black px-4 py-2 font-bold tracking-widest text-sm shadow-[0_0_20px_rgba(255,255,255,0.4)]">USD 249</span>
                  <span className="hidden sm:inline">·</span>
                  <span className="italic">No fluff. No jargon. Just clarity.</span>
                </div>

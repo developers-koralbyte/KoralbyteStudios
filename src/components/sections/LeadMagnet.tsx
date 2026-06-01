@@ -79,7 +79,7 @@ export function LeadMagnet({ onNavigate }: { onNavigate?: (page: string, anchor?
 
           <div className="space-y-4 pt-4 flex flex-col items-start">
             <div className="text-[10px] uppercase tracking-[0.2em] text-green-500 font-bold text-left">
-              Low-risk entry point, starting from USD 170
+              Low-risk entry point, starting from USD 249
             </div>
             <button 
               onClick={() => {

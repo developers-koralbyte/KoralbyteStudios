@@ -17,7 +17,7 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
         "Packaging Design (up to 3 SKUs)",
         "Launch Campaign Strategy Brief"
       ],
-      investment: "USD 3,990",
+      investment: "USD 4,990",
       delivery: "4-6 weeks",
       bestFor: "Entrepreneurs who are starting from scratch and need a complete brand foundation before going to market or approaching investors.",
       walkAway: [
@@ -40,7 +40,7 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
         "Stationery & Digital Asset Templates",
         "Social Media Profile Kit"
       ],
-      investment: "USD 4,990",
+      investment: "USD 5,449",
       delivery: "3-4 weeks",
       bestFor: "Businesses that already have clarity on their strategy and market but whose brand visuals are weak, outdated, or non-existent.",
       walkAway: [
@@ -62,7 +62,7 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
         "Full Marketing Plan with channel breakdowns",
         "Ad Creative Direction & Content Calendar Framework"
       ],
-      investment: "USD 2,990",
+      investment: "USD 3,990",
       delivery: "3-4 weeks",
       bestFor: "Businesses that have a product or service ready but lack the strategic documentation needed to grow, raise funding, or enter new markets confidently.",
       walkAway: [
@@ -70,6 +70,28 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
         "A 12-month marketing roadmap with channel-level detail",
         "A competitor analysis that reveals your real opportunities",
         "Zero guesswork on where to focus your energy and budget"
+      ]
+    },
+    {
+      id: "package-e",
+      title: "The Brand Voice",
+      for: "For Founders Who Need a Name, a Voice, and a Story That Wins",
+      desc: "Before you design a logo or launch a campaign, you need to know what your brand sounds like and what story it tells. This package gives you the words, the name, and the narrative that makes investors listen and customers trust.",
+      included: [
+        "Brand Name Development (up to 5 name concepts with rationale)",
+        "Tagline Creation & Brand Tone of Voice Guidelines",
+        "Messaging Hierarchy (how to talk to investors, customers, and partners)",
+        "Investor/Partner Pitch Deck (12-18 slides, full strategic narrative + premium design)",
+        "One-Pager / Executive Summary Document for distribution"
+      ],
+      investment: "USD 2,490",
+      delivery: "2-3 weeks",
+      bestFor: "Pre-launch founders who need to nail their brand name and story before anything else. Especially those preparing for investor meetings or market entry.",
+      walkAway: [
+        "A brand name that is memorable, available, and market-ready",
+        "A pitch deck that wins rooms, not just looks good",
+        "A clear, consistent brand voice for every channel",
+        "A one-pager you can send to any stakeholder with confidence"
       ]
     },
     {
@@ -91,28 +113,6 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
         "Monthly creative direction that keeps your brand consistent",
         "Clear performance reports so you always know your ROI",
         "A growth partner, not just an agency that sends invoices"
-      ]
-    },
-    {
-      id: "package-e",
-      title: "The Brand Voice",
-      for: "For Founders Who Need a Name, a Voice, and a Story That Wins",
-      desc: "Before you design a logo or launch a campaign, you need to know what your brand sounds like and what story it tells. This package gives you the words, the name, and the narrative that makes investors listen and customers trust.",
-      included: [
-        "Brand Name Development (up to 5 name concepts with rationale)",
-        "Tagline Creation & Brand Tone of Voice Guidelines",
-        "Messaging Hierarchy (how to talk to investors, customers, and partners)",
-        "Investor/Partner Pitch Deck (12-18 slides, full strategic narrative + premium design)",
-        "One-Pager / Executive Summary Document for distribution"
-      ],
-      investment: "USD 1,990",
-      delivery: "2-3 weeks",
-      bestFor: "Pre-launch founders who need to nail their brand name and story before anything else. Especially those preparing for investor meetings or market entry.",
-      walkAway: [
-        "A brand name that is memorable, available, and market-ready",
-        "A pitch deck that wins rooms, not just looks good",
-        "A clear, consistent brand voice for every channel",
-        "A one-pager you can send to any stakeholder with confidence"
       ]
     },
     {
@@ -336,12 +336,12 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 py-5 md:py-8 border-y border-white/10">
               <div>
                 <div className="text-[9px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-1 md:mb-2">Investment</div>
-                <div className="text-lg md:text-2xl font-bold text-orange-500">USD 8,990</div>
+                <div className="text-lg md:text-2xl font-bold text-orange-500">USD 11,990</div>
               </div>
               <div className="hidden md:block w-[1px] h-12 bg-white/10" />
               <div>
                 <div className="text-[9px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-1 md:mb-2">Delivered in</div>
-                <div className="text-base md:text-lg font-bold text-white">6-10 weeks</div>
+                <div className="text-base md:text-lg font-bold text-white">8-12 weeks</div>
                 <div className="text-[9px] md:text-xs text-white/200 font-mono mt-1">2 revision rounds per phase included</div>
               </div>
             </div>
@@ -407,8 +407,8 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
                 <th className="p-1 md:p-5 text-center border-r border-white/30 text-bauble-blue">Launch.</th>
                 <th className="p-1 md:p-5 text-center border-r border-white/5 opacity-70">Ident.</th>
                 <th className="p-1 md:p-5 text-center border-r border-white/5 opacity-70">Strat.</th>
-                <th className="p-1 md:p-5 text-center border-r border-white/5 opacity-70">Growth</th>
                 <th className="p-1 md:p-5 text-center border-r border-white/5 opacity-70">Voice</th>
+                <th className="p-1 md:p-5 text-center border-r border-white/5 opacity-70">Growth</th>
                 <th className="p-1 md:p-5 text-center border-r border-white/5 opacity-70">Creat.</th>
                 <th className="p-1 md:p-5 text-center font-black bg-white/5">Comp.</th>
               </tr>
@@ -420,12 +420,12 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
                 { label: "Brand Identity", values: [true, true, false, false, false, false, true] },
                 { label: "USP Dev", values: [true, false, true, false, false, false, true] },
                 { label: "Packaging", values: [true, false, false, false, false, false, true] },
-                { label: "Naming & Voice", values: [false, false, false, false, true, false, true] },
-                { label: "Pitch Deck", values: [false, false, false, false, true, false, true] },
-                { label: "Ad Mgmt", values: [false, false, false, true, false, true, false] },
+                { label: "Naming & Voice", values: [false, false, false, true, false, false, true] },
+                { label: "Pitch Deck", values: [false, false, false, true, false, false, true] },
+                { label: "Ad Mgmt", values: [false, false, false, false, true, true, false] },
                 { label: "Social", values: [false, false, false, false, false, true, false] },
-                { label: "E-Comm", values: [false, false, false, true, false, false, false] },
-                { label: "Retainer", values: [false, false, false, true, false, true, false] },
+                { label: "E-Comm", values: [false, false, false, false, true, false, false] },
+                { label: "Retainer", values: [false, false, false, false, true, true, false] },
               ].map((row, i) => (
                 <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                   <td className="p-1 md:p-4 font-bold text-[7px] sm:text-[10px] md:text-sm border-r border-white/5 break-words">{row.label}</td>
@@ -438,13 +438,13 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
               ))}
               <tr className="bg-white/5 backdrop-blur-2xl border-white/20">
                 <td className="p-1 md:p-4 font-bold text-[7px] sm:text-[10px] md:text-sm border-r border-white/5">Price</td>
-                <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">3,990</td>
                 <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">4,990</td>
-                <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">2,990</td>
+                <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">5,449</td>
+                <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">3,990</td>
+                <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">2,490</td>
                 <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">1,490/m</td>
-                <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">1,990</td>
                 <td className="p-0.5 md:p-4 text-center text-white/50 text-[6px] sm:text-[9px] md:text-xs font-mono border-r border-white/5 break-words">1,990/m</td>
-                <td className="p-0.5 md:p-4 text-center font-bold text-bauble-blue text-[6px] sm:text-[9px] md:text-xs font-mono bg-white/10 break-words">8,990</td>
+                <td className="p-0.5 md:p-4 text-center font-bold text-bauble-blue text-[6px] sm:text-[9px] md:text-xs font-mono bg-white/10 break-words">11,990</td>
               </tr>
             </tbody>
           </table>
@@ -456,7 +456,7 @@ export function ServicesPage({ onNavigate }: { onNavigate?: (page: string, ancho
       <section className="px-5 md:px-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">Not Sure Which Package Is Right for You?</h2>
         <p className="text-white/60 font-sans text-xs md:text-lg leading-relaxed max-w-2xl mx-auto">
-          Start with a Brand Audit. For <span className="text-bauble-blue font-bold">USD 170</span> we will tell you exactly where your brand stands, what is holding it back, and which package will move it forward.
+          Start with a Brand Audit. For <span className="text-bauble-blue font-bold">USD 249</span> we will tell you exactly where your brand stands, what is holding it back, and which package will move it forward.
         </p>
         <div className="pt-4 md:pt-8 flex justify-center">
           <button 
