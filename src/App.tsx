@@ -144,8 +144,7 @@ export default function App() {
       <header className="relative z-[60] flex items-center justify-between px-5 md:px-10 py-5 md:py-8 border-b border-white/40 bg-bauble-bg/50 backdrop-blur-sm sticky top-0 transform-gpu will-change-transform">
         <div className="flex items-center gap-8 lg:gap-12 xl:gap-16">
           <button onClick={() => handleNavigate("HOME")} className="flex items-center gap-2.5 safari-optimization">
-            <img src="/koralbytelogo.png" alt="Koralbyte Icon" className="h-9 md:h-11 w-auto object-contain" />
-            <img src="/koralbytetextlogo.png" alt="Koralbyte Text" className="h-4 md:h-6 w-auto object-contain" />
+            <img src="/koralbytetextlogo.png" alt="Koralbyte" className="h-6 md:h-8 w-auto object-contain" />
           </button>
           <nav className="hidden xl:flex items-center gap-8">
             {navItems.map((item) => (
@@ -254,8 +253,7 @@ export default function App() {
             {/* Branding Column */}
             <div className="space-y-8">
               <div className="flex items-center gap-2.5">
-                <img src="/koralbytelogo.png" alt="Koralbyte Icon" className="h-9 md:h-11 w-auto object-contain" />
-                <img src="/koralbytetextlogo.png" alt="Koralbyte Text" className="h-4 md:h-6 w-auto object-contain" />
+                <img src="/koralbytetextlogo.png" alt="Koralbyte" className="h-6 md:h-8 w-auto object-contain" />
               </div>
               <p className="text-white/50 font-sans text-xs leading-relaxed max-w-xs">
                 Building world-class brands for the SEA market. We combine strategy, identity, and growth to make you impossible to ignore.
