@@ -1,29 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Linkedin, Mail, X } from "lucide-react";
 
 export function TeamPage() {
   const [showPopup, setShowPopup] = useState(false);
 
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showPopup]);
+
   const teamMembers = [
     { 
       name: "Ibne", 
       role: "CEO", 
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=IbnEAli&style=transparent&top=shortHairTheCaesar&clothes=blazerAndShirt",
       bio: "Ibne started Koralbytes because he was tired of watching good businesses get sold expensive promises and handed nothing. Having built and exited multiple seven-figure brands, he built the agency he wished he'd had on the way up. If your idea is worth building, he knows how to make it real.",
       linkedinUrl: "https://www.linkedin.com/in/ibneshah/"
     },
     { 
       name: "Aniq", 
       role: "CMO", 
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aniq&style=transparent&top=shortHairShortFlat&clothes=hoodie",
       bio: "Most agencies sell tactics and hope something sticks. Koralbyte doesn't. Aniq has lived every side of marketing. From zero followers to real distribution, eleven brands built and scaled. No vanity metrics, no guessing. Just the growth levers that actually move a business.",
       linkedinUrl: "https://www.linkedin.com/in/aniqjaved"
     },
     {
       name: "Michelle",
       role: "Marketing Advisor & Board Member",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michelle&style=transparent&top=longHairStraight&clothes=blazerAndShirt",
       bio: "25 years building brands across hotels, theme parks, retail, and e-commerce. Michelle backs Koralbyte for the reason it exists, too many brands have a message and no one to make it land. If your brand has a story worth telling, she'll make sure it's told better than your competition's.",
       linkedinUrl: "https://www.linkedin.com/in/michelle-sonia-gregory-034a1616/"
     }
@@ -112,7 +121,7 @@ export function TeamPage() {
 
       {/* Team Section */}
       <section className="px-5 md:px-10 max-w-7xl mx-auto mb-20 md:mb-32">
-        <div className="flex flex-col md:flex-row justify-center items-start gap-12 md:gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8 lg:gap-12">
           {teamMembers.map((member, i) => (
             <motion.div 
               key={i} 
@@ -120,29 +129,39 @@ export function TeamPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group cursor-default w-full max-w-[400px] flex flex-col"
+              className="group cursor-default w-full lg:w-1/3 flex flex-col bg-black/40 backdrop-blur-md border border-white/10 p-8 md:p-10 hover:border-bauble-blue/50 hover:bg-black/60 transition-all duration-500 shadow-[0_0_0_rgba(105,104,172,0)] hover:shadow-[0_0_30px_rgba(105,104,172,0.6)] text-left relative overflow-hidden"
             >
-              <div className="aspect-[4/5] w-full bg-black/40 backdrop-blur-xl border border-white/10 relative overflow-hidden mb-6 group-hover:border-bauble-blue/50 transition-all duration-500 shadow-[0_0_0_rgba(105,104,172,0)] group-hover:shadow-[0_0_30px_rgba(105,104,172,0.9)] text-left shrink-0">
-                <img src={member.image} alt={member.name} className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                   <div className="flex gap-2">
-                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/40 bg-black/40 flex items-center justify-center backdrop-blur-sm hover:border-bauble-blue hover:text-bauble-blue transition-colors text-white">
-                        <Linkedin className="w-3.5 h-3.5" />
-                      </a>
-                   </div>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="text-[10px] uppercase tracking-[0.2em] text-bauble-blue font-bold">
+              {/* Subtle visual glow accent on hover */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-bauble-blue/5 blur-3xl rounded-full group-hover:bg-bauble-blue/20 transition-all duration-500 pointer-events-none" />
+              
+              <div className="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
+                <div className="text-[10px] tracking-[0.2em] font-bold text-bauble-blue uppercase font-mono">
                   {member.role}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-bauble-blue transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-white/70 font-sans text-sm leading-relaxed">
-                  {member.bio}
-                </p>
+                <a 
+                  href={member.linkedinUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:border-bauble-blue hover:text-bauble-blue hover:scale-110 transition-all text-white/80"
+                  title={`${member.name}'s LinkedIn`}
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="space-y-4 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-bauble-blue group-hover:from-bauble-blue group-hover:to-white transition-all duration-500 tracking-tight mb-4">
+                    {member.name}
+                  </h3>
+                  <p className="text-white/70 font-sans text-sm leading-relaxed mb-6">
+                    {member.bio}
+                  </p>
+                </div>
+                
+                <div className="flex items-center gap-2 text-[10px] text-white/30 uppercase tracking-[0.2em] font-mono group-hover:text-bauble-blue/65 transition-colors mt-auto">
+                  <span>Connect Profile</span>
+                  <span className="transition-transform group-hover:translate-x-1 duration-300">→</span>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -167,48 +186,125 @@ export function TeamPage() {
              </button>
           </div>
         </div>
-
-        {/* Popup specific to this section */}
-        <AnimatePresence>
-          {showPopup && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-md bg-black/60 p-5 px-4"
-            >
-              <motion.div
-                initial={{ scale: 0.95, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.95, y: 20 }}
-                className="bg-black/80 backdrop-blur-3xl border border-white/20 p-8 md:p-12 max-w-md w-full relative shadow-[0_0_40px_rgba(0,0,0,0.5)]"
-              >
-                <button 
-                  onClick={() => setShowPopup(false)}
-                  className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-                <div className="text-center space-y-4 relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-bauble-blue/10 border border-bauble-blue/20 flex items-center justify-center mx-auto mb-6">
-                    <Mail className="w-6 h-6 text-bauble-blue" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white tracking-tight">Not Hiring Right Now</h3>
-                  <p className="text-white/70 font-sans text-sm leading-relaxed">
-                    Oops! Looks like we're not hiring right now. You can check back later!
-                  </p>
-                  <button 
-                    onClick={() => setShowPopup(false)}
-                    className="mt-6 w-full py-4 text-[10px] uppercase tracking-[0.2em] font-bold bg-white text-black hover:bg-bauble-blue hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(105,104,172,0.4)]"
-                  >
-                    Close
-                  </button>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </section>
+
+      {/* Popup modal */}
+      {showPopup && createPortal(
+        <div 
+          onClick={() => setShowPopup(false)}
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-white/75 backdrop-blur-md p-4 md:p-6 cursor-pointer"
+          style={{ animation: 'fadeIn 0.25s ease-out forwards' }}
+        >
+          {/* Keyframe styled component for smooth animation */}
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            @keyframes scaleUp {
+              from { transform: scale(0.95); opacity: 0; }
+              to { transform: scale(1); opacity: 1; }
+            }
+          `}} />
+          
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-bauble-bg border border-white/10 p-6 md:p-10 max-w-2xl w-full max-h-[85vh] overflow-y-auto relative shadow-[0_10px_50px_rgba(105,104,172,0.15)] scrollbar-thin scrollbar-thumb-white/10 cursor-default rounded-lg"
+            style={{ animation: 'scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
+          >
+            <button 
+              onClick={() => setShowPopup(false)}
+              className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="space-y-6 relative z-10 text-left">
+              <div className="border-b border-white/10 pb-4">
+                <span className="text-[10px] bg-bauble-blue/10 text-bauble-blue border border-bauble-blue/20 px-2.5 py-1 font-mono uppercase tracking-[0.2em] font-bold inline-block mb-3">
+                  * Hiring *
+                </span>
+                <h3 className="text-3xl font-black text-white tracking-tight">Sales Closer</h3>
+                <p className="text-white/40 font-mono text-xs mt-1">Remote (US Client Base) · Independent Contractor</p>
+              </div>
+
+              <div className="space-y-6 font-sans text-sm text-white/80 leading-relaxed md:pr-4">
+                <div>
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-bauble-blue mb-2">Company</h4>
+                  <p className="text-white/90">
+                    <strong>KoralByte Studios</strong> is a brand strategy and identity studio. We deliver complete brand systems (naming, identity, packaging, messaging, pitch decks, and paid creative) for founder-led D2C and early-stage companies in the United States.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white/5 p-4 border border-white/10">
+                  <div>
+                    <span className="text-[10px] font-mono text-white/40 block">ENGAGEMENT TYPE</span>
+                    <span className="text-xs font-bold text-white">Independent contractor, commission-only</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono text-white/40 block">LOCATION</span>
+                    <span className="text-xs font-bold text-white">Remote (United States client base; English-language)</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-bauble-blue mb-2">Position Summary</h4>
+                  <p className="text-white/90">
+                    The Sales Closer is responsible for converting qualified, warm sales opportunities into signed engagements. Our outbound team generate booked calls; the Closer manages those conversations from discovery through to a signed agreement, selling our packaged services and retainers.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-bauble-blue mb-2">Key Responsibilities</h4>
+                  <ul className="list-disc pl-5 space-y-2 text-white/90">
+                    <li>Conduct discovery and upsell calls with prospects who have purchased and received a Brand Audit, presenting the appropriate service package and pricing and securing a decision.</li>
+                    <li>Convert qualified opportunities into project engagements and monthly retainers.</li>
+                    <li>Address client objections during calls and adapt to each conversation.</li>
+                    <li>Maintain accurate records in the company CRM, including call outcomes, scoped pricing, close dates, and follow-up actions.</li>
+                    <li>Provide structured feedback to the outbound team on which proposals and audit recommendations are converting, to inform ongoing improvements.</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-bauble-blue mb-2">Required Qualifications</h4>
+                  <ul className="list-disc pl-5 space-y-2 text-white/90">
+                    <li>A minimum of one year experience closing B2B services, agency, or consulting engagements.</li>
+                    <li>A demonstrable closing rate on warm, qualified opportunities (the company benchmarks call-to-close conversion at 15–35%).</li>
+                    <li>Proven ability to sell strategy and brand services to discerning, often technical, founders through value-based selling rather than discounting.</li>
+                    <li>Clear, direct, and professional communication consistent with the company's founder-to-founder brand voice.</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-bauble-blue mb-2">Compensation</h4>
+                  <p className="text-white/90">
+                    Commission-only, paid on closed revenue (audit upsells and retainers), uncapped. Earnings scale with pipeline volume as monthly revenue grows. Commission structure to be discussed during the application process.
+                  </p>
+                </div>
+
+                <div className="border-t border-bauble-blue/20 pt-6 mt-8">
+                  <h4 className="text-lg font-bold text-white tracking-tight mb-2">How to Apply</h4>
+                  <p className="text-white/90">
+                    Please send your CV and professional highlights directly to{" "}
+                    <a href="mailto:connect@coralbytestudios.com" className="text-bauble-blue hover:underline font-bold font-mono">
+                      connect@coralbytestudios.com
+                    </a>.
+                  </p>
+                </div>
+              </div>
+
+              <button 
+                onClick={() => setShowPopup(false)}
+                className="mt-6 w-full py-4 text-[10px] uppercase tracking-[0.2em] font-bold bg-white text-black hover:bg-bauble-blue hover:text-black transition-all duration-300 shadow-[0_4px_20px_rgba(105,104,172,0.15)] font-mono"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }

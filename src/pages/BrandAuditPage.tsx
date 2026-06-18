@@ -342,7 +342,7 @@ export function BrandAuditPage({ onNavigate }: BrandAuditPageProps) {
                 <button type="submit" disabled={loading} className="group flex justify-center items-center gap-3 bg-bauble-blue px-6 sm:px-10 py-4 sm:py-5 text-[10px] sm:text-[12px] font-bold tracking-[0.2em] text-[#fcfcfc] hover:bg-[#111111] hover:text-[#fcfcfc] transition-all duration-300 w-full md:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
                   {loading ? "SUBMITTING..." : "SUBMIT"} <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </button>
-                <p className="text-white/40 font-mono text-[10px] md:text-xs text-center border-t border-white/10 pt-6 w-full">Delivered in 5–7 business days. No commitment required.</p>
+                <p className="text-white/40 font-mono text-[10px] md:text-xs text-center border-t border-white/10 pt-6 w-full">Delivered in 5–7 business days. No commitment required. Or email us at connect@coralbytestudios.com</p>
               </div>
             </form>
           )}

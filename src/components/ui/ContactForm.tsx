@@ -189,6 +189,15 @@ export function ContactForm() {
           <button type="submit" disabled={loading} className="group w-full flex justify-center items-center gap-3 bg-bauble-blue px-6 py-4 text-[11px] font-bold tracking-[0.2em] text-[#fcfcfc] hover:bg-[#111111] hover:text-[#fcfcfc] transition-all duration-300 disabled:opacity-50 border border-transparent hover:border-bauble-blue/50">
             {loading ? "SENDING..." : "SEND MESSAGE"} <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
+          
+          <div className="text-center pt-2">
+            <span className="text-white/40 text-[10px] uppercase tracking-[0.15em] font-mono">
+              Or email us directly:{" "}
+              <a href="mailto:connect@coralbytestudios.com" className="text-bauble-blue hover:underline font-bold transition-all">
+                connect@coralbytestudios.com
+              </a>
+            </span>
+          </div>
         </form>
       )}
     </div>
