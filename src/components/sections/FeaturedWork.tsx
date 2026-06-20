@@ -34,7 +34,7 @@ export function FeaturedWork({ onNavigate }: { onNavigate?: (page: string, ancho
 
   return (
     <section className="py-16 md:py-24 px-5 md:px-10 relative z-20 bg-bauble-bg bg-pattern-abstract overflow-hidden text-center md:text-left">
-      <PortfolioModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+      <PortfolioModal item={selectedItem} onClose={() => setSelectedItem(null)} onNavigate={onNavigate} />
       <div className="max-w-7xl mx-auto space-y-12 md:space-y-16 relative z-10">
         
         {/* Header */}

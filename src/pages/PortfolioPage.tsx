@@ -38,7 +38,7 @@ export function PortfolioPage({ onNavigate }: { onNavigate?: (page: string, anch
 
   return (
     <div className="relative z-20 pt-24 pb-32">
-      <PortfolioModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+      <PortfolioModal item={selectedItem} onClose={() => setSelectedItem(null)} onNavigate={onNavigate} />
       
       <section className="px-5 md:px-10 max-w-7xl mx-auto mb-24 relative">
          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20 pt-8 md:pt-16">
