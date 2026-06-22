@@ -317,8 +317,8 @@ export default function App() {
               </button>
               <div className="pt-2 border-t border-white/5">
                 <div className="text-[10px] tracking-[0.2em] font-bold text-white/40 uppercase font-mono mb-1">General Inquiries</div>
-                <a href="mailto:connect@coralbytestudios.com" className="text-xs md:text-sm font-bold text-bauble-blue hover:underline font-mono transition-colors">
-                  connect@coralbytestudios.com
+                <a href="mailto:connect@koralbyte.com" className="text-xs md:text-sm font-bold text-bauble-blue hover:underline font-mono transition-colors">
+                  connect@koralbyte.com
                 </a>
               </div>
             </div>

@@ -193,8 +193,8 @@ export function ContactForm() {
           <div className="text-center pt-2">
             <span className="text-white/40 text-[10px] uppercase tracking-[0.15em] font-mono">
               Or email us directly:{" "}
-              <a href="mailto:connect@coralbytestudios.com" className="text-bauble-blue hover:underline font-bold transition-all">
-                connect@coralbytestudios.com
+              <a href="mailto:connect@koralbyte.com" className="text-bauble-blue hover:underline font-bold transition-all">
+                connect@koralbyte.com
               </a>
             </span>
           </div>

@@ -8,6 +8,7 @@ const ALLOWED_EMAILS = [
   'alinourawan123@gmail.com',
   'aniqjaved@seedingo.com',
   'aniqjaved@gmail.com',
+  'ca.ibneali88@gmail.com',
 ];
 
 export function AdminPage() {

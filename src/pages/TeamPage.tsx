@@ -22,7 +22,8 @@ export function TeamPage() {
       name: "Ibne", 
       role: "CEO", 
       bio: "Ibne started Koralbytes because he was tired of watching good businesses get sold expensive promises and handed nothing. Having built and exited multiple seven-figure brands, he built the agency he wished he'd had on the way up. If your idea is worth building, he knows how to make it real.",
-      linkedinUrl: "https://www.linkedin.com/in/ibneshah/"
+      linkedinUrl: "https://www.linkedin.com/in/ibneshah/",
+      image: "/ibne.jpeg"
     },
     { 
       name: "Aniq", 
@@ -134,6 +135,42 @@ export function TeamPage() {
               {/* Subtle visual glow accent on hover */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-bauble-blue/5 blur-3xl rounded-full group-hover:bg-bauble-blue/20 transition-all duration-500 pointer-events-none" />
               
+              {member.image ? (
+                <div className="relative mb-6 w-full h-[360px] overflow-hidden border border-white/10 bg-black/20 group-hover:border-bauble-blue/30 transition-all duration-500 rounded-lg">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-all duration-750 scale-100 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                </div>
+              ) : (
+                <div className="relative mb-6 w-full h-[360px] overflow-hidden border border-white/10 bg-black/45 group-hover:border-bauble-blue/30 transition-all duration-500 rounded-lg flex flex-col items-center justify-center p-6 select-none">
+                  {/* Subtle technical background grid */}
+                  <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.03] pointer-events-none" />
+                  
+                  {/* Glowing orbital ring outline */}
+                  <div className="absolute w-44 h-44 rounded-full border border-white/5 group-hover:border-bauble-blue/15 transition-all duration-500 flex items-center justify-center">
+                    <div className="absolute w-36 h-36 rounded-full border border-dashed border-white/5 animate-[spin_40s_linear_infinite] group-hover:border-bauble-blue/10" />
+                    <div className="absolute w-28 h-28 rounded-full border border-white/5" />
+                  </div>
+                  
+                  {/* Monogram letters with ambient glow */}
+                  <div className="relative z-10 flex flex-col items-center justify-center text-center">
+                    <span className="text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 group-hover:from-white group-hover:to-bauble-blue transition-all duration-500">
+                      {member.name.substring(0, 2).toUpperCase()}
+                    </span>
+                  </div>
+                  
+                  {/* Abstract technical corner ticks */}
+                  <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-white/10 group-hover:border-bauble-blue/30 transition-colors" />
+                  <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-white/10 group-hover:border-bauble-blue/30 transition-colors" />
+                  <div className="absolute bottom-4 left-4 w-2 h-2 border-b border-l border-white/10 group-hover:border-bauble-blue/30 transition-colors" />
+                  <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-white/10 group-hover:border-bauble-blue/30 transition-colors" />
+                </div>
+              )}
+
               <div className="flex justify-between items-start mb-6 border-b border-white/5 pb-4">
                 <div className="text-[10px] tracking-[0.2em] font-bold text-bauble-blue uppercase font-mono">
                   {member.role}
@@ -287,8 +324,8 @@ export function TeamPage() {
                   <h4 className="text-lg font-bold text-white tracking-tight mb-2">How to Apply</h4>
                   <p className="text-white/90">
                     Please send your CV and professional highlights directly to{" "}
-                    <a href="mailto:connect@coralbytestudios.com" className="text-bauble-blue hover:underline font-bold font-mono">
-                      connect@coralbytestudios.com
+                    <a href="mailto:connect@koralbyte.com" className="text-bauble-blue hover:underline font-bold font-mono">
+                      connect@koralbyte.com
                     </a>.
                   </p>
                 </div>
